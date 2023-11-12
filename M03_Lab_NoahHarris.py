@@ -1,14 +1,21 @@
 ################################################################################
 #  File: M03_Lab_NoahHarris.py
 #  Author: Noah Harris
-#  Description:
+#  Description: This app prompts a user to enter information about a vehicle
+#  and then displays the information back to the user. The class Vehicle stores
+#  the vehicle type and the class Automobile inherits from Vehicle and stores
+#  the year, make, model, number of doors, and roof type. The main function
+#  calls the other functions to get the user input and display the vehicle
+#  information.
 ################################################################################
 
+# create class for vehicle
 class Vehicle:
     def __init__(self):
         self.vehicle_type = ""
 
 
+# create Automobile class that inherits from Vehicle
 class Automobile(Vehicle):
     def __init__(self):
         super().__init__()
@@ -19,6 +26,7 @@ class Automobile(Vehicle):
         self.roof = ""
 
 
+# define a function to get input from user and store it 
     def get_user_input(self):
         self.vehicle_type = input("Enter the vehicle type: ")
         self.year = input("Enter the year: ")
@@ -28,6 +36,7 @@ class Automobile(Vehicle):
         self.roof = input("Enter the roof type (solid or sun roof): ")
 
 
+# define a function to display the vehicle information entered by the user
     def display_vehicle(self):
         print("\nVehicle Type: " , self.vehicle_type)
         print("Year: " , self.year)
@@ -37,6 +46,7 @@ class Automobile(Vehicle):
         print("Roof: " , self.roof)
 
 
+# define main function to call the other functions
 def main():
     car = Automobile()
     car.get_user_input()
